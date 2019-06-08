@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chellophane::Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.slim.js"></script>
+    <script src="js/chat.js"></script>
+</head>
+
+<body>
+    <section class="hero is-primary is-small">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <div class="navbar-item">
+                        <h1 class="title">
+                            Chellophane
+                        </h1>
+                    </div>
+                    <span class="navbar-burger" data-target="navbarMenuHeroA">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item is-active">
+                            Chat
+                        </a>
+                        <a class="navbar-item">
+                            My Profile
+                        </a>
+                        <a class="navbar-item" id="logout_btn">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <section class="section is-paddingless">
+
+        <div class="container">
+            <div class="container" id="usr_pad"></div>
+
+            <hr class="hr">
+
+            <div class="control" id="scroll_div" style="overflow:auto; height: 300px; padding:0px;">
+            </div>
+
+            <hr class="hr has-text-success">
+        </div>
+    </section>
+
+    <div id="bottom_div" style="position: fixed; bottom: 0; width: 100%;">
+        <div class="container">
+            <div class="field has-addons">
+                <p class="control is-expanded">
+                    <input class="input is-primary" id="input_txt" type="text" placeholder="Type in your message">
+                </p>
+                <p class="control">
+                    <a class="button is-primary" id="snd_txt_btn">
+                        Send
+                    </a>
+                </p>
+            </div>
+            <p class="help" id="feedback_txt"></p>
+        </div>
+    </div>
+    <audio id="new_user">
+        <source src="audio/login.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="pop">
+        <source src="audio/txt.mp3" type="audio/mpeg">
+    </audio>
+</body>
+
+</html>
